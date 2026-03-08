@@ -1,18 +1,26 @@
 {
   "expo": {
-    "name": "_temp_expo",
-    "slug": "_temp_expo",
+    "name": "AminePharma",
+    "slug": "amine-pharma",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "aminepharma",
+    "output": "single",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aminepharma.gestion",
+      "infoPlist": {
+        "NSCameraUsageDescription": "AminePharma utilise la caméra pour photographier vos reçus et factures.",
+        "NSPhotoLibraryUsageDescription": "AminePharma accède à vos photos pour importer des reçus et factures.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,10 +29,29 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.aminepharma.gestion"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "aae6809a-6002-4b62-b314-a278c2129415"
+      }
     }
   }
 }
